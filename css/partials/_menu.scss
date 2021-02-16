@@ -14,6 +14,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    top:0;
 }
 
 .nav-menu{
@@ -25,13 +26,30 @@ header{
 .nav-list{
     list-style: none;
     display: flex;
-
+    transition: 1s ease;
     li{
         margin-left: 24px;
     }
     @include responsive(){
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        height: 100vh;
+        margin: 0;
+        background-color: #222;
+        flex-direction: column;
+
+        padding: 100px 20px;
+
+        width: 100%;
+        max-width: 250px;
     };
+
+}
+
+.nav-list.active{
+    right: 0 !important;
 }
 
 .nav-link{
@@ -98,10 +116,13 @@ header{
     display: none;
     width: 48px;
     height: 48px;
-    background: white;
+    background: transparent;
     border-radius: 20px;
 
     @include responsive(){
         display: block;
+        z-index: 999;
+        cursor: pointer;
     };
 }
+
