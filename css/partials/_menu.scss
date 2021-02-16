@@ -1,3 +1,4 @@
+
 header{
     width: 100%;
     padding-top: 16px;
@@ -28,6 +29,9 @@ header{
     li{
         margin-left: 24px;
     }
+    @include responsive(){
+        display: none;
+    };
 }
 
 .nav-link{
@@ -85,4 +89,19 @@ header{
             }
         }
     }
+    @include responsive(){
+        display: none;
+    };
+}
+
+.bx{
+    display: none;
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 20px;
+
+    @include responsive(){
+        display: block;
+    };
 }
